@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EPANOUIS | 高級チョコレートバー公式EC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#121212] text-[#E5E2DC]">
+
+<!-- Header -->
+<header class="fixed w-full z-50 bg-black/80 backdrop-blur">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <h1 class="text-2xl font-semibold tracking-widest text-[#C9A24D]">EPANOUIS</h1>
+    <nav class="space-x-6 hidden md:block">
+      <a href="#concept" class="hover:text-[#C9A24D]">Concept</a>
+      <a href="#products" class="hover:text-[#C9A24D]">Products</a>
+      <a href="#shop" class="hover:text-[#C9A24D]">Shop</a>
+      <a href="#cart" class="border px-4 py-2 rounded-full hover:bg-[#C9A24D] hover:text-black">Cart</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="h-screen flex items-center justify-center text-center relative">
+  <div class="absolute inset-0">
+    <img src="6b7c0856-2be8-4d45-a46b-89343ee2ca52.png" class="w-full h-full object-cover opacity-40" />
+  </div>
+  <div class="relative z-10 max-w-3xl px-6">
+    <h2 class="text-5xl md:text-6xl font-bold mb-6">砂糖を使わない、<br>究極の贅沢</h2>
+    <p class="text-lg text-gray-300 mb-8">Cacao 85% ─ 心と身体を華やがせる一枚</p>
+    <a href="#products" class="inline-block bg-[#C9A24D] text-black px-8 py-4 rounded-full font-semibold hover:opacity-90">商品を見る</a>
+  </div>
+</section>
+
+<!-- Concept -->
+<section id="concept" class="py-24 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+  <div>
+    <h3 class="text-3xl font-bold mb-6 text-[#C9A24D]">CONCEPT</h3>
+    <p class="leading-relaxed text-gray-300">EPANOUISは、砂糖を一切使わず、カカオ本来の力だけで仕上げたラグジュアリーチョコレート。静かな夜、ウイスキーやコーヒーとともに味わう“大人の時間”を提案します。</p>
+  </div>
+  <img src="6b7c0856-2be8-4d45-a46b-89343ee2ca52.png" class="rounded-2xl shadow-2xl" />
+</section>
+
+<!-- Products / EC -->
+<section id="products" class="py-24 bg-black">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-3xl font-bold text-center mb-16 text-[#C9A24D]">PRODUCTS</h3>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="bg-[#1A1A1A] p-8 rounded-3xl">
+        <img src="6b7c0856-2be8-4d45-a46b-89343ee2ca52.png" class="h-56 w-full object-cover rounded-xl mb-6" />
+        <h4 class="text-xl font-semibold mb-2">EPANOUIS 85%</h4>
+        <p class="text-sm text-gray-400 mb-4">カカオ85%、砂糖不使用。最も象徴的な一枚。</p>
+        <p class="text-lg mb-6">¥1,870 <span class="text-sm text-gray-400">(税込)</span></p>
+        <button onclick="addToCart('EPANOUIS 85%',1870)" class="w-full bg-[#C9A24D] text-black py-3 rounded-full font-semibold">カートに入れる</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cart -->
+<section id="cart" class="py-24 max-w-4xl mx-auto px-6">
+  <h3 class="text-3xl font-bold mb-8 text-[#C9A24D]">CART</h3>
+  <ul id="cartItems" class="space-y-4 mb-6"></ul>
+  <p class="text-lg">合計金額：<span id="total">0</span> 円</p>
+  <p class="text-sm text-gray-400 mt-2">※6,000円以上で送料無料</p>
+  <button class="mt-6 bg-[#C9A24D] text-black px-8 py-3 rounded-full font-semibold">購入手続きへ</button>
+</section>
+
+<!-- Shop Info -->
+<section id="shop" class="py-24 bg-black text-center">
+  <h3 class="text-3xl font-bold mb-6 text-[#C9A24D]">SHOP INFO</h3>
+  <p>埼玉県さいたま市中央区</p>
+  <p class="mt-2">オンライン限定販売</p>
+</section>
+
+<!-- Footer -->
+<footer class="py-8 text-center text-gray-500 bg-[#0E0E0E]">© 2026 EPANOUIS</footer>
+
+<script>
+  let total = 0;
+  function addToCart(name, price) {
+    const li = document.createElement('li');
+    li.textContent = `${name} - ¥${price}`;
+    document.getElementById('cartItems').appendChild(li);
+    total += price;
+    document.getElementById('total').textContent = total;
+  }
+</script>
+
+</body>
+</html>
